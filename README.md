@@ -1,4 +1,4 @@
 fiManagment
 ===========
 
-Android application to communicate via ZMQ to RPI, and set relays. 
+Android application which communicate via ZMQ to RPI and set relays. 
