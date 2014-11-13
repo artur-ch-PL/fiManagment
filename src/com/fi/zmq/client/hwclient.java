@@ -6,14 +6,15 @@ import org.zeromq.ZMQ;
 public class hwclient {
 
 public static void main(String[] args) {
+	String HOST_IP = "tcp://192.168.10.7:5555";
     ZMQ.Context context = ZMQ.context(1);
     IoAdapter ioa = new IoAdapter();
     
     //  Socket to talk to server
-    System.out.println("Connecting to hello world server...");
+    System.out.println("Connecting to fi mgt server...");
 
     ZMQ.Socket requester = context.socket(ZMQ.REQ);
-    requester.connect("tcp://192.168.10.7:5555");
+    requester.connect(HOST_IP);
     
     
     String requestT = ioa.get_all_pins();

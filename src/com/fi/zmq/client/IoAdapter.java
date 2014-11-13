@@ -1,20 +1,17 @@
 package com.fi.zmq.client;
 
+
 public class IoAdapter {
 	
 	// set pin status
 	// get pin status
 	// set all pins
-	// -- encrypt all pins
 	// get all pin status
-	//	-- decrypt pin status
-	// speratation sentiel: ":"
+	// separator ":"
 	// end sentiel ";"
+	// @TODO decrypt pin status
+	// @TODO encrypt all pins
 	
-	//
-	// Single read/write;
-	// @ToDo add interfaces with one arugment (pin requested) to toggle state.
-	//
 	private static String status;
 	
 	public String set_pin(int pinRequested, int pinState){
@@ -57,8 +54,7 @@ public class IoAdapter {
 	
 	
 	//
-	// machine state - 
-	//	@ToDo rewrite as enum field, and use it
+	// machine state - @TODO rewrite as enum field
 	//
 	public String get_app_status(){
 		//actual
@@ -68,8 +64,8 @@ public class IoAdapter {
 	}
 	
 	public void set_app_status(String incomeStatus){
-		/*not compatible with 1.6 (used currently by android...)
-		 * try {
+		// not compatible with JAVA 1.6 (used currently by Android)
+		 /* try {
 			switch (incomeStatus){
 			case "actual":
 				IoAdapter.status = incomeStatus;
