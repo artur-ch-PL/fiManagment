@@ -29,18 +29,19 @@ import com.fi.finamanagment.model.DbButton;
  *  @TODO socket labels should be moved to the end-point side (RPI). (currently each user device, contain own labels)
  *  @TODO no status for connection to the end-point
  *  @TODO after reset wifi router, require reset connection on the end-point device (RPI)
+ *  @TODO make end-point device IP configurable
  * 
- * ToDo list
- * 	@TODO readout from end-point number of sockets
+ * ToDo list:
+ *  @TODO readout from end-point number of sockets
  *  @TODO build widgets to easy change socket state
  *  @TODO read current state of I/O
  *  @TODO set identifier on User side 
  *  @TODO rebuild code to use one command to set all i/o's
  *  @TODO enable easy WiFi configuration on RPI 
- *  	@TODO build searching device mechanism, make end-point device IP configurable
+ *  @TODO build searching device mechanism
  *  
  * Dream list
- * 	@DREAM enable bluetooth 4 LE 
+ *  @DREAM enable bluetooth 4 LE 
  **/
 
 public class MainActivity extends Activity {
@@ -151,12 +152,12 @@ public class MainActivity extends Activity {
 				/*  Set pin */
 				String command = "set:"+pinID.toString()+";";
 				Log.d("command", command);
-			    requester.send(command.getBytes(), 0);
-			    requester.recv(0);
+				requester.send(command.getBytes(), 0);
+			    	requester.recv(0);
 			    				    
-	            /* ZMQ close */
-			    requester.close();
-		        context.term();
+	            		/* ZMQ close */
+			    	requester.close();
+		        	context.term();
 			};
 		}).start();
 	}
